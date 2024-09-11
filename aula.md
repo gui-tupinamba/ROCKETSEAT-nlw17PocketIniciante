@@ -56,3 +56,12 @@ Como montar um lego, utilizando peças para crir algoritmos, ou seja, para resol
 # Condicionais
 
 - [x] switch
+
+## Módulos em Node.js:
+
+- [x] Importação de módulos (require, CommoJS)
+- [x] Biblioteca 'inquirer' para criar prompts interativos
+
+## Programação assíncrona e Promises:
+
+Uso de funções assíncronas (async/await)
