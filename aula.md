@@ -7,13 +7,13 @@ Como montar um lego, utilizando peças para crir algoritmos, ou seja, para resol
 
 ## Peças de uma linguagem
 
-- [x] Comentários
-- [x] Declarações de variáveis (const, let)
-- [x] Operadores (atribuição, concatenação, matemáticos, lógicos)
-- [x] Tipos de dados (string, number, boolean)
-- [x] Estrutura de dados (functions, object, array)
-- [] Controle de fluxo (if/else)
-- [] Estrutura de repetição (for, while)
+- Comentários
+- Declarações de variáveis (const, let)
+- Operadores (atribuição, concatenação, matemáticos, lógicos)
+- Tipos de dados (string, number, boolean)
+- Estrutura de dados (functions, object, array)
+- Controle de fluxo (if/else)
+- Estrutura de repetição (for, while)
 
 # Fases da resolução de um problema:
 - [x] Coletar os dados
@@ -32,6 +32,7 @@ Como montar um lego, utilizando peças para crir algoritmos, ou seja, para resol
 ## Operadores:
 - [x] Operadores de atribuição de valor =
 - [x] Operador de concatenação +
+- [x] Operador de comparação: == != < > <= >=
 
 ## Estrutura de dados:
 
@@ -56,6 +57,7 @@ Como montar um lego, utilizando peças para crir algoritmos, ou seja, para resol
 # Condicionais
 
 - [x] switch
+- [x] if..else
 
 ## Módulos em Node.js:
 
