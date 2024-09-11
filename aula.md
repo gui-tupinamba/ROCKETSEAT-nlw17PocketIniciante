@@ -52,3 +52,7 @@ Como montar um lego, utilizando peças para crir algoritmos, ou seja, para resol
 # Estrutura de repetição
 
 - [x] while
+
+# Condicionais
+
+- [x] switch
