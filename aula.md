@@ -48,3 +48,7 @@ Como montar um lego, utilizando peças para crir algoritmos, ou seja, para resol
 - [x] criar, passar argumento
 - [x] executar
 - [x] arrow function / named function
+
+# Estrutura de repetição
+
+- [x] while
