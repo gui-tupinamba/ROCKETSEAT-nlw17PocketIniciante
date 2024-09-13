@@ -59,10 +59,52 @@ const metasRealizadas = async () => {
     }
 
     await select({
-        message: "Metas Realizadas",
+        message: `Metas Realizadas: ${realizadas.length}`,
         choices: [...realizadas],
     })
 }
+
+const metasAbertas = async () => {
+    const abertas = metas.filter((meta) => {
+        return meta.checked != true;
+    });
+
+    if (abertas.length == 0) {
+        console.log("Você não tem metas abertas.");
+        return;
+    };
+
+    await select({
+        message: `Metas Abertas: ${abertas.length}`,
+        choices: [...abertas],
+    });
+}
+
+const deletarMetas = async () => {
+    const metasDesmarcadas = metas.map((meta) => {
+        return { value: meta.value, checked: false }
+    });
+
+    const itensDeletar = await checkbox({
+        message: "Selecione um item para deletar",
+        choices: [...metasDesmarcadas],
+        instructions: false,
+    });
+
+    if (itensDeletar.length == 0) {
+        console.log("Nenhum item para deletar.");
+        return;
+    }
+
+    itensDeletar.forEach((item) => {
+        metas = metas.filter((meta) => {
+            return meta.value != item;
+        });
+    });
+
+    console.log("Meta(s) deletada(s) com sucesso!")
+}
+
 
 const start = async () => {
     while(true) {
@@ -83,6 +125,14 @@ const start = async () => {
                     value: "realizadas",
                 },
                 {
+                    name: "Metas abertas",
+                    value: "abertas",
+                },
+                {
+                    name: "Deletar metas",
+                    value: "deletar",
+                },
+                {
                     name: "Sair",
                     value: "sair",
                 },
@@ -99,6 +149,12 @@ const start = async () => {
                 break;
             case "realizadas":
                 await metasRealizadas();
+                break;
+            case "abertas":
+                await metasAbertas();
+                break;
+            case "deletar":
+                await deletarMetas();
                 break;
             case "sair":
                 console.log("Saindo do programa...");
