@@ -20,20 +20,21 @@ const cadastrarMeta = async () => {
     );
 };
 
-const listarMeta = async () => {
+const listarMetas = async () => {
     const respostas = await checkbox({
         message: "Use as SETAS para mudar de meta, ESPAÇO para marcar ou desmarcar e o ENTER para finalizar essa etapa.",
         choices: [...metas],
+        instructions: false,
+    });
+
+    metas.forEach((m) => {
+        m.checked = false;
     });
 
     if(respostas.length == 0) {
         console.log("Você não escolheu nenhuma meta.");
         return;
     };
-
-    metas.forEach((m) => {
-        m.checked = false;
-    });
 
     respostas.forEach((resposta) => {
         const meta = metas.find((m) => {
@@ -46,6 +47,22 @@ const listarMeta = async () => {
     console.log('Meta(s) concluída(as)')
 
 };
+
+const metasRealizadas = async () => {
+    const realizadas = metas.filter((meta) => {
+        return meta.checked;
+    });
+    
+    if (realizadas.length == 0) {
+        console.log("Você não realizou nenhuma meta.");
+        return;
+    }
+
+    await select({
+        message: "Metas Realizadas",
+        choices: [...realizadas],
+    })
+}
 
 const start = async () => {
     while(true) {
@@ -62,6 +79,10 @@ const start = async () => {
                     value: "listar",
                 },
                 {
+                    name: "Metas realizadas",
+                    value: "realizadas",
+                },
+                {
                     name: "Sair",
                     value: "sair",
                 },
@@ -74,7 +95,10 @@ const start = async () => {
                 console.log(metas);
                 break;
             case "listar":
-                await listarMeta();
+                await listarMetas();
+                break;
+            case "realizadas":
+                await metasRealizadas();
                 break;
             case "sair":
                 console.log("Saindo do programa...");

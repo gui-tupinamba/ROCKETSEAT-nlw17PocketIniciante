@@ -33,11 +33,13 @@ Como montar um lego, utilizando peças para crir algoritmos, ou seja, para resol
 - [x] Operadores de atribuição de valor =
 - [x] Operador de concatenação +
 - [x] Operador de comparação: == != < > <= >=
+- [x] Spread operator: ...
 
 ## Estrutura de dados:
 
 ### Arrays:
 - [x] Uma lista que contém qualquer tipo de dado
+- [x] Métodos de array: push, [find, forEach, filter] : HOF (Higher Order Function)
 
 ### Objetos:
 - [x] Atributos de métodos
