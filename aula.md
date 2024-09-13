@@ -16,20 +16,24 @@ Como montar um lego, utilizando peças para crir algoritmos, ou seja, para resol
 - Estrutura de repetição (for, while)
 
 # Fases da resolução de um problema:
-- [x] Coletar os dados
-- [x] Processar os dados (manipular, alterar ...)
-- [x] Apresentar os dados
+
+Coletar os dados
+Processar os dados (manipular, alterar ...)
+Apresentar os dados
 
 ## Escopo e variáveis:
+
 - [x] Variáveis globais e locais
 - [x] Constantes
 
 ## Tipos de dados:
+
 - [x] Strings (textos): "" '' ``
 - [x] Numbers: 2 1.5
 - [x] Boolean: true, false
 
 ## Operadores:
+
 - [x] Operadores de atribuição de valor =
 - [x] Operador de concatenação +
 - [x] Operador de comparação: == != < > <= >=
@@ -38,10 +42,12 @@ Como montar um lego, utilizando peças para crir algoritmos, ou seja, para resol
 ## Estrutura de dados:
 
 ### Arrays:
+
 - [x] Uma lista que contém qualquer tipo de dado
-- [x] Métodos de array: push, [find, forEach, filter] : HOF (Higher Order Function)
+- [x] Métodos de array: push, [find, forEach, filter, map] : HOF (Higher Order Function)
 
 ### Objetos:
+
 - [x] Atributos de métodos
 - [x] Criação e manipulação de objetos
 - [x] Acesso a propiedades de objetos
@@ -67,5 +73,4 @@ Como montar um lego, utilizando peças para crir algoritmos, ou seja, para resol
 - [x] Biblioteca 'inquirer' para criar prompts interativos
 
 ## Programação assíncrona e Promises:
-
-Uso de funções assíncronas (async/await)
+- [x] Uso de funções assíncronas (async/await)

@@ -1,5 +1,7 @@
 const { select, input, checkbox } = require('@inquirer/prompts');
 
+let mensagem = "Bem-vindo ao AppMetas"
+
 let meta = {
     value: 'beber agua',
     checked: false,
@@ -11,13 +13,15 @@ const cadastrarMeta = async () => {
     const meta = await input({ message: "Digite a meta: "});
 
     if(meta.length == 0) {
-        console.log("Você não digitou nenhuma meta.");
+        mensagem = "Você não digitou nenhuma meta.";
         return; 
     };
 
     metas.push(
         { value: meta, checked: false } 
     );
+
+    mensagem = "Meta cadastrada com sucesso!!!"
 };
 
 const listarMetas = async () => {
@@ -32,7 +36,7 @@ const listarMetas = async () => {
     });
 
     if(respostas.length == 0) {
-        console.log("Você não escolheu nenhuma meta.");
+        mensagem = "Você não escolheu nenhuma meta.";
         return;
     };
 
@@ -44,7 +48,7 @@ const listarMetas = async () => {
         meta.checked = true;
     });
 
-    console.log('Meta(s) concluída(as)')
+    mensagem = "Meta(s) concluída(as)";
 
 };
 
@@ -70,7 +74,7 @@ const metasAbertas = async () => {
     });
 
     if (abertas.length == 0) {
-        console.log("Você não tem metas abertas.");
+        mensagem = "Você não tem metas abertas.";
         return;
     };
 
@@ -92,7 +96,7 @@ const deletarMetas = async () => {
     });
 
     if (itensDeletar.length == 0) {
-        console.log("Nenhum item para deletar.");
+        mensagem = "Nenhum item para deletar.";
         return;
     }
 
@@ -102,12 +106,22 @@ const deletarMetas = async () => {
         });
     });
 
-    console.log("Meta(s) deletada(s) com sucesso!")
+    mensagem = "Meta(s) deletada(s) com sucesso!";
 }
 
+const mostrarMensagem = () => {
+    console.clear();
+
+    if (mensagem != "") {
+        console.log(mensagem);
+        console.log("");
+        mensagem = "";
+    }
+}
 
 const start = async () => {
     while(true) {
+        mostrarMensagem();
         
         const opcao = await select({
             message: "Menu >",
@@ -142,7 +156,6 @@ const start = async () => {
         switch(opcao) {
             case "cadastrar":
                 await cadastrarMeta();
-                console.log(metas);
                 break;
             case "listar":
                 await listarMetas();
@@ -162,4 +175,6 @@ const start = async () => {
         };
     };
 };
+
+// Executar o programa
 start();
